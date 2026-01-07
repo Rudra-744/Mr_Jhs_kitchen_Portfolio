@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Connects to your Backend
+  baseURL: 'http://localhost:5000/api',
 });
 
 export const fetchProducts = async () => {
-  const { data } = await api.get('/menu'); // Public Menu Route
+  const { data } = await api.get('/menu');
   return data;
 };
 

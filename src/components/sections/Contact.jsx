@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, Instagram, ArrowRight } from "lucide-react";
 
 const Contact = () => {
-  // Google Maps Link (Jab user card par click karega tab full map khulega)
   const openMap = () => {
     const address =
       "Mrs Jha Kitchen, B-117, Shivalik Platinum, Judge Bunglow Rd, Bodakdev, Ahmedabad, Gujarat";
@@ -17,7 +16,6 @@ const Contact = () => {
     window.open("https://www.instagram.com/mrsjhakitchen_", "_blank");
   };
 
-  // Scroll to Menu Section
   const scrollToMenu = () => {
     const element = document.getElementById("menu");
     if (element) {
@@ -28,13 +26,11 @@ const Contact = () => {
     }
   };
 
-  // Live Map Embed URL (Ahmedabad Address)
   const mapEmbedUrl = `https://maps.google.com/maps?q=Mrs%20Jha%20Kitchen%2C%20B-117%2C%20Shivalik%20Platinum%2C%20Judge%20Bunglow%20Rd%2C%20Bodakdev%2C%20Ahmedabad%2C%20Gujarat&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
   return (
     <section id="contact" className="py-20 px-6 bg-[#FDFBF7] relative">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        {/* --- LEFT COLUMN: Contact Details (Same as before) --- */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -56,7 +52,6 @@ const Contact = () => {
           </p>
 
           <div className="space-y-8">
-            {/* Location */}
             <div
               className="flex gap-5 items-start group cursor-pointer"
               onClick={openMap}
@@ -75,7 +70,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Phone */}
             <div className="flex gap-5 items-start">
               <div className="bg-[#FFF4D6] p-3 rounded-full text-jha-yellow shrink-0">
                 <Phone size={24} />
@@ -89,7 +83,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Instagram */}
             <div
               className="flex gap-5 items-start group cursor-pointer"
               onClick={openInsta}
@@ -108,7 +101,6 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Opening Hours */}
             <div className="flex gap-5 items-start">
               <div className="bg-[#FFF4D6] p-3 rounded-full text-jha-yellow shrink-0">
                 <Clock size={24} />
@@ -127,7 +119,6 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* --- RIGHT COLUMN: LIVE MAP --- */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -135,7 +126,6 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="relative h-[500px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-xl"
         >
-          {/* 1. LIVE GOOGLE MAP IFRAME (Background) */}
           <iframe
             title="Mrs Jha Kitchen Location"
             width="100%"
@@ -148,14 +138,11 @@ const Contact = () => {
             className="absolute inset-0 z-0 filter grayscale-[20%] hover:grayscale-0 transition-all duration-700"
           ></iframe>
 
-          {/* 2. OVERLAY CARD (Emoji & Text) */}
-          {/* Map ke upar ek semi-transparent card taaki text padha ja sake */}
           <div
-            onClick={openMap} // Card pe click karne se full map khulega
+            onClick={openMap}
             className="absolute inset-0 z-10 flex items-center justify-center p-8 bg-black/10 hover:bg-black/5 transition-colors cursor-pointer group"
           >
             <div className="bg-[#FDFBF7]/90 backdrop-blur-md p-8 rounded-3xl shadow-lg text-center relative top-[-20px] hover:scale-105 transition-transform duration-300">
-              {/* EMOJI (Image hata di) */}
               <div className="text-7xl mb-4 drop-shadow-md group-hover:-translate-y-2 transition-transform animate-bounce-slow">
                 📍
               </div>
@@ -173,7 +160,6 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* 3. FLOATING MENU BUTTON */}
           <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[90%] md:w-auto md:left-auto md:right-0 md:translate-x-0 bg-[#3E2C22] p-5 md:p-6 rounded-3xl shadow-2xl flex items-center justify-between gap-6 z-30 m-4">
             <div>
               <h4 className="text-white font-serif font-bold text-lg mb-1">
